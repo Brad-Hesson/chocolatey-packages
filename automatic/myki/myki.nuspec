@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>myki</id>
+    <version>1.2.19.20200814</version>
+    <owners>chocolatey,Brad Hesson</owners>
+    <title>MYKI</title>
+    <authors>MYKI Inc.</authors>
+    <projectUrl>https://myki.com/</projectUrl>
+    <iconUrl>https://static.myki.com/img/icon/myki_owl.svg</iconUrl>
+    <tags>myki password manager</tags>
+    <summary>MYKI is an offline password manager that securely stores and syncs your sensitive data locally on your MYKI-enabled devices.</summary>
+    <description>## Store your passwords offline. Away from the cloud.
+MYKI stores your password away from the cloud and allows you to login on any device by pairing your MYKI app with your computer in a P2P encrypted manner.
+
+## Grant login requests from your app.
+Pairing the MYKI app with your computer allows you to grant access to accounts in your browser, from your desktop or mobile app.
+
+## No Master Password
+You no longer need to create, manage and remember a master password anymore. Use your fingerprint, Face ID or a pin code to access the MYKI app.
+
+## Share access without revealing the password.
+MYKI allows you to easily share access to your accounts, credit cards and secure notes without revealing the password.
+
+## Manage your two-factor authentication tokens.
+MYKI is also an authenticator that securely stores your 2FA tokens and autofills the codes when you need to login.</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
