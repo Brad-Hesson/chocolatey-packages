@@ -3,11 +3,12 @@
   <metadata>
     <id>myki</id>
     <version>1.2.19.20200816</version>
-    <owners>chocolatey,Brad Hesson</owners>
+    <owners>Brad Hesson</owners>
+    <packageSourceUrl>https://github.com/Brad-Hesson/chocolatey-packages</packageSourceUrl>
     <title>MYKI</title>
     <authors>MYKI Inc.</authors>
     <projectUrl>https://myki.com/</projectUrl>
-    <iconUrl>https://github.com/Brad-Hesson/chocolatey-packages/blob/master/icons/myki_owl.svg</iconUrl>
+    <iconUrl>https://static.myki.com/img/icon/myki_owl.svg</iconUrl>
     <tags>myki password manager</tags>
     <summary>MYKI is an offline password manager that securely stores and syncs your sensitive data locally on your MYKI-enabled devices.</summary>
     <description>## Store your passwords offline. Away from the cloud.
