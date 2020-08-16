@@ -10,7 +10,6 @@ if (($Name.Length -gt 0) -and ($Name[0] -match '^random (.+)')) {
 
     $group = [int]$Matches[1]
     $n = (Get-Random -Maximum $group)
-    Write-Host $lsau
     Write-Host "TESTING GROUP $($n+1) of $group"
 
     $group_size = [int]($lsau.Count / $group) + 1
@@ -40,12 +39,6 @@ $options = [ordered]@{
         ApiKey = $Env:github_api_key                        #Your github api key - if empty anoymous gist is created
         Path   = "$PSScriptRoot\Update-Force-Test-${n}.md"       #List of files to add to the gist
         Description = "Update Force Test Report #powershell #chocolatey"
-    }
-
-    Git = @{
-        User     = ''                                       #Git username, leave empty if github api key is used
-        Password = $Env:github_api_key                      #Password if username is not empty, otherwise api key
-        Force    = $true
     }
 }
 
