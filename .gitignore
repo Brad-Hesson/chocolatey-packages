@@ -1,6 +1,7 @@
 *~
 *.bak
 *.cache
+*.nupkg
 *.old
 *.orig
 *.swp
