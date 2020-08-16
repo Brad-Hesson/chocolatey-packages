@@ -1,8 +1,8 @@
 # Chocolatey Packages
 
 
-[![](https://ci.appveyor.com/api/projects/status/github/Brad-Hesson/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/Brad-Hesson/chocolatey-packages)
-[Update status](https://gist.github.com/Brad-Hesson/YOUR_GIST_ID)
+[![](https://ci.appveyor.com/api/projects/status/github/Brad-Hesson/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/Brad-Hesson/chocolatey-packages-test)
+[Update status](https://gist.github.com/Brad-Hesson/564b6d7b78bdffbaaa29942eac99a637)
 
 
 ## Chocolatey Packages Template
