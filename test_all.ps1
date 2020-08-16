@@ -10,6 +10,7 @@ if (($Name.Length -gt 0) -and ($Name[0] -match '^random (.+)')) {
 
     $group = [int]$Matches[1]
     $n = (Get-Random -Maximum $group)
+    Write-Host $lsau
     Write-Host "TESTING GROUP $($n+1) of $group"
 
     $group_size = [int]($lsau.Count / $group) + 1
