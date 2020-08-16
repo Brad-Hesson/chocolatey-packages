@@ -19,30 +19,30 @@ environment:
   au_test_groups: 1
 
   # Github token to commit pushed packages to repository
-  github_user_repo: {github_user}/{repository}
+  github_user_repo: Brad-Hesson/chocolatey-packages
   github_api_key:
-    secure: YOUR_GITHUB_API_KEY_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
+    secure: w+mMhSUvlGw/8KKFIrBFeIcMQHMeBX+0g+H8WOIIyJREbNsz3BgPBOQOPZ6aNzKX #https://ci.appveyor.com/tools/encrypt
 
 
   # Mail credentials - for error notifications
-  mail_user:
-    secure: YOUR_EMAIL_ACCOUNT_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
-  mail_pass:
-    secure: YOUR_EMAIL_PASSWORD_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
-  mail_server: smtp.gmail.com
-  mail_port: 587
-  mail_enablessl: true
+  #mail_user:
+  #  secure: YOUR_EMAIL_ACCOUNT_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
+  #mail_pass:
+  #  secure: YOUR_EMAIL_PASSWORD_HERE_ENCRYPTED_STRING #https://ci.appveyor.com/tools/encrypt
+  #mail_server: smtp.gmail.com
+  #mail_port: 587
+  #mail_enablessl: true
 
   # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
   # Optional, leave empty to create anonymous gist
-  gist_id:
+  gist_id: 564b6d7b78bdffbaaa29942eac99a637
 
   # Force test: gist id for test results
-  gist_id_test:
+  gist_id_test: 50816d1a767cfc44a9b4e6748e87024d
 
   # Chocolatey API key - to push updated packages
   api_key:
-    secure: YOUR_CHOCO_API_KEY_HERE_ENCRYPTED_STRING # https://ci.appveyor.com/tools/encrypt
+    secure: or5UcO3tm6PmH0v06CkhFsSz5Tq5qTnftyOWjWjCCaYU58xH9z6XTuZUeeYrmqL+ # https://ci.appveyor.com/tools/encrypt
 
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
