@@ -41,6 +41,12 @@ $options = [ordered]@{
         Path   = "$PSScriptRoot\Update-Force-Test-${n}.md"       #List of files to add to the gist
         Description = "Update Force Test Report #powershell #chocolatey"
     }
+
+    Git = @{
+        User     = ''                                       #Git username, leave empty if github api key is used
+        Password = $Env:github_api_key                      #Password if username is not empty, otherwise api key
+        Force    = $true
+    }
 }
 
 $global:info = updateall -Name $Name -Options $Options
