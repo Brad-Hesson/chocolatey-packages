@@ -8,7 +8,7 @@
     <title>MYKI</title>
     <authors>MYKI Inc.</authors>
     <projectUrl>https://myki.com/</projectUrl>
-    <iconUrl>https://static.myki.com/img/icon/myki_owl.svg</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Brad-Hesson/chocolatey-packages/automatic/myki/myki_owl.svg</iconUrl>
     <tags>myki password manager</tags>
     <summary>MYKI is an offline password manager that securely stores and syncs your sensitive data locally on your MYKI-enabled devices.</summary>
     <description>## Store your passwords offline. Away from the cloud.
