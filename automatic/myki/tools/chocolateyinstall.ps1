@@ -1,23 +1,33 @@
 ﻿$ErrorActionPreference = 'Stop';
 
+
 $url         = 'https://static.myki.com/releases/da/MYKI-latest.exe'
 $checksum    = '458E3CE9344EC009A1C930B19B7909F0C6EAB452A2DA93A84BC9A46517C277EE'
 $extract_path = Join-Path -Path $env:LOCALAPPDATA -ChildPath "SquirrelTemp"
 
-$packageArgs = @{
+$silentArgs = '-s'
+$statements = "cd '$extract_path';.\Update.exe --install ."
+
+
+$zipArgs = @{
     packageName      = $env:ChocolateyPackageName
     unzipLocation    = $extract_path
-    fileType         = 'exe'
     url              = $url
     checksum         = $checksum
     checksumType     = 'sha256'
-
-    validExitCodes   = @(0)
-    statements       = "cd '$extract_path'; .\Update.exe --install . -s"
-    exeToRun         = "powershell"
 }
-Install-ChocolateyZipPackage @packageArgs
 
-Start-ChocolateyProcessAsAdmin @packageArgs
+if (-not $env:chocolateyInstallOverride) {
+    $statements = $statements -replace "--install .","--install . $silentArgs"
+}
 
-Remove-Item $extract_path -Exclude "SquirrelSetup.log" -Recurse
+$processArgs = @{
+    noSleep         = $true
+    statements      = $statements
+}
+
+Install-ChocolateyZipPackage @zipArgs
+
+$env:ChocolateyExitCode = Start-ChocolateyProcessAsAdmin @processArgs
+ 
+Remove-Item $extract_path -Exclude "*.log" -Recurse
