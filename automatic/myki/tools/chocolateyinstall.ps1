@@ -1,30 +1,23 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$url      = 'https://static.myki.com/releases/da/MYKI-latest.exe'
-$checksum = 'f87266298a3e7249cbfd5bfa25e0e17420ca2d4f9b4a5c6681b523cf88c3e63a'
+$url         = 'https://static.myki.com/releases/da/MYKI-latest.exe'
+$checksum    = '458E3CE9344EC009A1C930B19B7909F0C6EAB452A2DA93A84BC9A46517C277EE'
+$extract_path = Join-Path -Path $env:LOCALAPPDATA -ChildPath "SquirrelTemp"
 
 $packageArgs = @{
-    packageName   = $env:ChocolateyPackageName
-    fileType      = 'exe'
-    url           = $url
-    checksum      = $checksum
-    checksumType  = 'sha256'
-    silentArgs    = "-s"
-    validExitCodes= @(0)
-}
+    packageName      = $env:ChocolateyPackageName
+    unzipLocation    = $extract_path
+    fileType         = 'exe'
+    url              = $url
+    checksum         = $checksum
+    checksumType     = 'sha256'
 
-Install-ChocolateyPackage @packageArgs
-
-Write-Host -NoNewLine 'Waiting for Registry Confirmation.'
-$count = 0
-while((Get-UninstallRegistryKey -SoftwareName "myki*") -eq $null){
-    sleep 1
-    Write-Host -NoNewLine '.'
-    $count += 1
-    if($count -ge 20){
-        Write-Host ''
-        Write-Warning 'Registry confirmation timed-out.  The installation might have failed.'
-        break
-    }
+    validExitCodes   = @(0)
+    statements       = "cd '$extract_path'; .\Update.exe --install . -s"
+    exeToRun         = "powershell"
 }
-Write-Host ''
+Install-ChocolateyZipPackage @packageArgs
+
+Start-ChocolateyProcessAsAdmin @packageArgs
+
+Remove-Item $extract_path -Exclude "SquirrelSetup.log" -Recurse
