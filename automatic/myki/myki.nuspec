@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>myki</id>
-    <version>1.2.19.20200816</version>
+    <version>1.2.21</version>
     <owners>Brad Hesson</owners>
     <packageSourceUrl>https://github.com/Brad-Hesson/chocolatey-packages</packageSourceUrl>
     <title>MYKI</title>
