@@ -2,7 +2,7 @@
 
 
 $url         = 'https://static.myki.com/releases/da/MYKI-latest.exe'
-$checksum    = '458e3ce9344ec009a1c930b19b7909f0c6eab452a2da93a84bc9a46517c277ee'
+$checksum    = 'c2a5a91f1d22dcf779ad1110a632ac841260e0fd4c0a258244710c37f46824d6'
 $extract_path = Join-Path -Path $env:LOCALAPPDATA -ChildPath "SquirrelTemp"
 
 $silentArgs = '-s'
